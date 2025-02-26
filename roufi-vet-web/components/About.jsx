@@ -2,7 +2,7 @@ const About = () => {
     return (
         <div className="relative bg-white">
 
-            <div className="relative z-10 bg-cover bg-center bg-no-repeat px-6 py-4 md:pt-5"
+            <div className="relative z-10 bg-cover bg-center bg-no-repeat px-6 py-4 md:pt-5 pb-10"
                 style={{ backgroundImage: "url('/assets/Welcome-Topography-Pattern.png')" }}>
                 <div className="max-w-6xl mx-auto text-center">
                     <h2 className="text-[#ff0302] text-3xl font-semibold">WELCOME TO</h2>
@@ -19,6 +19,14 @@ const About = () => {
                     </button>
                 </div>
             </div>
+
+            {/* <div className=" bottom-0 left-0 w-full">
+        <img 
+          src="/assets/Curved-Divider.svg" 
+          alt="Mountain Divider"
+          className="w-full object-cover"
+        />
+      </div> */}
 
 
         </div>
