@@ -1,32 +1,28 @@
 const About = () => {
     return (
-      <div className="relative bg-white">
-        {/* Background Section */}
-        <div className="relative z-10 bg-cover bg-center bg-no-repeat px-6 py-20 md:pt-16" 
-          style={{ backgroundImage: "url('/assets/Welcome-Topography-Pattern.png')" }}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-[#1a8b00] text-2xl font-semibold">WELCOME TO</h2>
-            <h1 className="text-3xl md:text-5xl font-bold text-[#C7A875]">BUFFALO VETERINARY CLINIC</h1>
-            <p className="mt-6 text-gray-700">
-              We’re a small-town neighborhood clinic that offers all the advantages of modern veterinary technology...
-            </p>
-            <button className="mt-8 px-6 py-3 bg-blue-700 text-white rounded-lg shadow-lg hover:bg-blue-800">
-              MAKE AN APPOINTMENT
-            </button>
-          </div>
+        <div className="relative bg-white">
+
+            <div className="relative z-10 bg-cover bg-center bg-no-repeat px-6 py-4 md:pt-5"
+                style={{ backgroundImage: "url('/assets/Welcome-Topography-Pattern.png')" }}>
+                <div className="max-w-6xl mx-auto text-center">
+                    <h2 className="text-[#ff0302] text-3xl font-semibold">WELCOME TO</h2>
+                    <h1 className="text-3xl md:text-5xl font-bold text-[#1a8b00]">Roufi Vet VETERINARY CLINIC</h1>
+                    <p className="mt-12 text-gray-700 text-lg"> We’re a small-town neighborhood clinic that offers all the advantages of modern veterinary technology. Our treatment expertise ranges from animals as small as hamsters to as large as draft horses. </p>
+
+                    <p className="mt-5 text-gray-700 text-lg"> Whatever their size, we’re dedicated to providing the best veterinary care to animals in Roufi Vet and surrounding areas. We take pride in delivering personalized, compassionate care to our patients in a comfortable veterinary facility that is locally owned and operated or with our dedicated farmhouse service.</p>
+
+                    <p className="mt-5 text-gray-700 text-lg">Whether it’s routine vaccinations or a complex medical problem, we’re here for you and the animals you care about</p>
+
+
+                    <button className=" mt-16 px-5 py-2 border border-2 border-[#ff0302]  text-xl font-semibold text-[#ff0302]">
+                        Make Appointment
+                    </button>
+                </div>
+            </div>
+
+
         </div>
-  
-        {/* Wavy SVG Background */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0">
-          <svg viewBox="0 0 1440 320" className="w-full">
-            <path fill="#ffffff" fillOpacity="1" 
-              d="M0,256L80,234.7C160,213,320,171,480,165.3C640,160,800,192,960,202.7C1120,213,1280,203,1360,197.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
-            </path>
-          </svg>
-        </div>
-      </div>
     );
-  };
-  
-  export default About;
-  
+};
+
+export default About;
