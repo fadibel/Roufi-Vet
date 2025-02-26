@@ -1,4 +1,4 @@
-const Loading = () => {
+const Hero = () => {
     return(
         <div>
             <img src="./assets/petimage.jpeg"
@@ -9,4 +9,4 @@ const Loading = () => {
         </div>
     )
 }
-export default Loading;
+export default Hero;
