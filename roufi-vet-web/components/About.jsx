@@ -14,8 +14,8 @@ const About = () => {
                     <p className="mt-5 text-gray-700 text-lg">Whether it’s routine vaccinations or a complex medical problem, we’re here for you and the animals you care about</p>
 
 
-                    <button className=" mt-16 px-5 py-2 border border-2 border-[#ff0302]  text-xl font-semibold text-[#ff0302]">
-                        Make Appointment
+                    <button className=" mt-16 px-6 py-3 border  bg-[#1a8b00] rounded-full text-base font-medium text-white">
+                        Book Appointment
                     </button>
                 </div>
             </div>

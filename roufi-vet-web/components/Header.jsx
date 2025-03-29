@@ -25,10 +25,9 @@ const Header = () => {
 
     const navigation = [
         { id: "0", title: "Home", url: "/" },
-        { id: "1", title: "About", url: "" },
+        { id: "1", title: "About", url: "/About" },
         { id: "2", title: "Our Services", url: "" },
-        { id: "3", title: "Pharmacy", url: "" },
-        { id: "4", title: "Blog", url: "" }
+        { id: "3", title: "Contact", url: "" },
     ];
 
     return (
@@ -50,11 +49,8 @@ const Header = () => {
 
                 {/* Buttons */}
                 <div className="hidden md:flex gap-4">
-                    <button className="px-5 py-2 border border-black rounded-full hover:bg-[#1a8b00] text-lg font-semibold text-black">
-                        Contact us
-                    </button>
-                    <button className="px-5 py-2 border border-[#ff0302] rounded-full text-lg font-semibold text-[#ff0302]">
-                        Make Appointment
+                    <button className="px-6 py-3 border bg-[#1a8b00] rounded-full text-base font-medium text-white">
+                        Book Appointment
                     </button>
                 </div>
 
@@ -65,18 +61,25 @@ const Header = () => {
             </div>
 
             {/* Mobile Navigation Menu */}
-            <div className={`absolute top-0 left-0 w-full bg-white shadow-md transition-transform duration-300 ${menuOpen ? "translate-y-0" : "-translate-y-full"} md:hidden`}>
-                <div className="flex flex-col items-center py-6">
+            <div className={`absolute top-0 left-0 w-full bg-[#fffcf7] shadow-md transition-transform duration-300 ${menuOpen ? "translate-y-0" : "-translate-y-full"} md:hidden`}>
+                <div className="flex flex-col items-center py-6 relative">
+                    {/* Close Button */}
+                    <button className="absolute top-4 right-4 p-2 text-black" onClick={() => setMenuOpen(false)}>
+                        <X size={30} />
+                    </button>
+
+                    <div>
+                    <Image src="/assets/logo.png" width={200} height={50} alt="logo" />
+                </div>
+
                     {navigation.map((item) => (
-                        <Link key={item.id} href={item.url} className="py-2 text-lg font-medium text-black" onClick={() => setMenuOpen(false)}>
+                        <Link key={item.id} href={item.url} className="py-2 text-xl font-medium text-black" onClick={() => setMenuOpen(false)}>
                             {item.title}
                         </Link>
                     ))}
-                    <button className="mt-4 px-5 py-2 border border-black rounded-full hover:bg-[#1a8b00] text-lg font-semibold text-black">
-                        Contact us
-                    </button>
-                    <button className="mt-2 px-5 py-2 border border-[#ff0302] rounded-full text-lg font-semibold text-[#ff0302]">
-                        Make Appointment
+
+                    <button className="mt-4 px-6 py-3 border bg-[#1a8b00] rounded-full text-base font-medium text-white">
+                        Book Appointment
                     </button>
                 </div>
             </div>
