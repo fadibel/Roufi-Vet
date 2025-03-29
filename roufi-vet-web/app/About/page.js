@@ -18,7 +18,7 @@ const About = () => {
               <div className="md:w-1/2">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#1a8b00]">Our Story</h1>
                 <p className="text-lg text-gray-700 mb-6">
-                  Founded in 2010, Roufi Vet Clinic has been providing exceptional veterinary care to pets and their families for over a decade. Our mission is to deliver compassionate, high-quality veterinary services that enhance the lives of animals and strengthen the bond between pets and their owners.
+                  Founded in 1992, Roufi Vet Clinic has been providing exceptional veterinary care to pets and their families for over a decade. Our mission is to deliver compassionate, high-quality veterinary services that enhance the lives of animals and strengthen the bond between pets and their owners.
                 </p>
                 <p className="text-lg text-gray-700">
                   What started as a small practice has grown into a trusted veterinary center, serving thousands of pets annually. Our success is built on a foundation of expertise, empathy, and a genuine love for animals.

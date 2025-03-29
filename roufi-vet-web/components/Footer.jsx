@@ -60,11 +60,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4 text-[#1a8b00]">Contact</h3>
             <ul className="space-y-2 text-gray-600">
-              <li>123 Vet Street</li>
-              <li>Pet City, PC 12345</li>
+              <li>CH3J+GJ9, Hamma Bouziane</li>
+              <li>Constantine</li>
               <li className="font-medium text-[#ff0302]">+213 551.21.76.99</li>
               <li className="font-medium text-[#ff0302]">+213 771.12.40.91</li>
-              <li>info@roufivets.com</li>
+              <li>roufivet92@gmail.com</li>
             </ul>
           </div>
         </div>

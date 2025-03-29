@@ -27,7 +27,7 @@ const Header = () => {
         { id: "0", title: "Home", url: "/" },
         { id: "1", title: "About", url: "/About" },
         { id: "2", title: "Our Services", url: "" },
-        { id: "3", title: "Contact", url: "" },
+        { id: "3", title: "Contact", url: "/Contact" },
     ];
 
     return (
