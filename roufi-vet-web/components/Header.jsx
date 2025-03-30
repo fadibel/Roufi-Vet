@@ -49,9 +49,11 @@ const Header = () => {
 
                 {/* Buttons */}
                 <div className="hidden md:flex gap-4">
-                    <button className="px-6 py-3 border bg-[#1a8b00] rounded-full text-base font-medium text-white">
-                        Book Appointment
-                    </button>
+                    <Link href="/BookAppointment">
+                        <button className="px-6 py-3 border bg-[#1a8b00] rounded-full text-base font-medium text-white">
+                            Book Appointment
+                        </button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -69,8 +71,8 @@ const Header = () => {
                     </button>
 
                     <div>
-                    <Image src="/assets/logo.png" width={200} height={50} alt="logo" />
-                </div>
+                        <Image src="/assets/logo.png" width={200} height={50} alt="logo" />
+                    </div>
 
                     {navigation.map((item) => (
                         <Link key={item.id} href={item.url} className="py-2 text-xl font-medium text-black" onClick={() => setMenuOpen(false)}>
@@ -78,9 +80,11 @@ const Header = () => {
                         </Link>
                     ))}
 
-                    <button className="mt-4 px-6 py-3 border bg-[#1a8b00] rounded-full text-base font-medium text-white">
-                        Book Appointment
-                    </button>
+                    <Link href="/BookAppointment">
+                        <button className="px-6 py-3 border bg-[#1a8b00] rounded-full text-base font-medium text-white">
+                            Book Appointment
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

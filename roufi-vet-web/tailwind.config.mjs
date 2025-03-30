@@ -10,6 +10,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'roufi-red': '#FF0000',
+				'roufi-green': '#2D9D3A',
+				'roufi-light-green': '#7CD655',
+				'roufi-cream': '#FFF9F0',
+				'roufi-brown': '#8D5B4C',
       },
     },
   },
