@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const About = () => {
     return (
         <div className="relative bg-white">
@@ -13,10 +15,11 @@ const About = () => {
 
                     <p className="mt-5 text-gray-700 text-lg">Whether it’s routine vaccinations or a complex medical problem, we’re here for you and the animals you care about</p>
 
-
+                    <Link href="/BookAppointment">
                     <button className=" mt-16 px-6 py-3 border  bg-[#1a8b00] rounded-full text-base font-medium text-white">
                         Book Appointment
                     </button>
+                    </Link>
                 </div>
             </div>
 
