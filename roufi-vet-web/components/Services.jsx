@@ -1,19 +1,22 @@
 import React from "react";
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardHeader, 
-  CardTitle 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
 } from "@/components/ui/Card";
-import { 
-  HeartPulse, 
-  Stethoscope, 
-  Scissors, 
-  PawPrint, 
-  Pill, 
-  ShieldCheck 
+import {
+  HeartPulse,
+  Stethoscope,
+  Scissors,
+  PawPrint,
+  Pill,
+  ShieldCheck
 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "./ui/Button";
 
 const serviceItems = [
   {
@@ -64,8 +67,40 @@ const Services = () => {
         </p>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 ">
-          {serviceItems.map((service, index) => (
+
+
+
+        <div className="mt-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+          <div className="flex justify-center">
+            <Link href="/LargeAnimal">
+              <div
+                className="relative h-[200px] w-[350px] bg-cover bg-center rounded-3xl"
+                style={{ backgroundImage: "url('/assets/Meet-the-Team.png')" }}
+              >
+                <h2 className="absolute inset-0 flex items-center justify-center text-2xl text-white font-semibold bg-black/40 rounded-3xl">
+                  Large Animals
+                </h2>
+              </div>
+            </Link>
+          </div>
+
+          <div className="flex justify-center">
+            <Link href="/SmallAnimal">
+              <div
+                className="relative h-[200px] w-[350px] bg-cover bg-center rounded-3xl"
+                style={{ backgroundImage: "url('/assets/GettyImages-184384329-56a001545f9b58eba4ae69d1.jpg')" }}
+              >
+                <h2 className="absolute inset-0 flex items-center justify-center text-2xl text-white font-semibold bg-black/40 rounded-3xl">
+                  Small Animals
+                </h2>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+
+
+        {/* {serviceItems.map((service, index) => (
             <Card
               key={index}
               className="border border-gray-100 hover:shadow-md transition-shadow group overflow-hidden"
@@ -83,10 +118,11 @@ const Services = () => {
                 </CardDescription>
               </CardContent>
             </Card>
-          ))}
-        </div>
+          ))} */}
+
       </div>
-    </section>
+
+    </section >
   );
 };
 
