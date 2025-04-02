@@ -13,61 +13,71 @@ const SmallAnimal = () => {
             id: 1,
             title: "EXOTIC & POCKET PETS",
             image: "/assets/Pocket-Pets-Exotics.png",
-            alt: "Cat and rabbit together"
+            alt: "Cat and rabbit together",
+            link: "/SmallAnimal/exotic-pocketpets"
         },
         {
             id: 2,
             title: "DIAGNOSTICS",
-            image:"/assets/Diagnostics.png",
-            alt: "Dogs in a hallway"
+            image: "/assets/Diagnostics.png",
+            alt: "Dogs in a hallway",
+            link: "/SmallAnimal/diagnostics"
         },
         {
             id: 3,
             title: "DENTISTRY",
             image: "/assets/Service-Block-1.png",
-            alt: "Dog getting dental treatment"
+            alt: "Dog getting dental treatment",
+            link: "/SmallAnimal/dentistry"
         },
         {
             id: 4,
             title: "SURGERY",
             image: "/assets/surgery.png",
-            alt: "Cat with cone collar"
+            alt: "Cat with cone collar",
+            link: "/SmallAnimal/surgery"
         },
         {
             id: 5,
             title: "WELLNESS CARE",
             image: "/assets/Wellness-Care.png",
-            alt: "Dog looking over fence"
+            alt: "Dog looking over fence",
+            link: "/SmallAnimal/willnesscare"
         },
         {
             id: 6,
             title: "ORTHOPEDICS",
             image: "/assets/Orthopedics.png",
-            alt: "Veterinarian examining a golden retriever"
+            alt: "Veterinarian examining a golden retriever",
+            link: "/SmallAnimal/orthopedics"
         },
         {
             id: 7,
             title: "PAIN MANAGEMENT",
             image: "/assets/Pain-Management-Laser-Therapy.png",
-            alt: "Dog receiving treatment"
+            alt: "Dog receiving treatment",
+            link: "/SmallAnimal/painmanagement"
         },
         {
             id: 8,
             title: "ULTRASOUND AND ECHOCARDIOGRAMS",
             image: "/assets/Ultrasound.png",
-            alt: "Dog getting ultrasound"
+            alt: "Dog getting ultrasound",
+            link: "/SmallAnimal/ultrasoundandecho"
         },
         {
             id: 9,
             title: "TIBIAL TUBEROSITY ADVANCEMENT (TTA)",
             image: "/assets/TTA.png",
-            alt: "Dog paw with bandage"
+            alt: "Dog paw with bandage",
+            link: "/SmallAnimal/tta"
         },
         {
             id: 10,
             title: "TIBIAL PLATEAU LEVELING OSTEOTOMY (TPLO)",
             image: "/assets/TPLO.png",
-            alt: "Dog recovering from surgery"
+            alt: "Dog recovering from surgery",
+            link: "/SmallAnimal/tplo"
         }
     ];
 
@@ -91,12 +101,15 @@ const SmallAnimal = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service) => (
-                            <ServiceCard
-                                key={service.id}
-                                title={service.title}
-                                image={service.image}
-                                alt={service.alt}
-                            />
+                            <Link key={service.id} href={service.link || "/SmallAnimal"}>
+
+                                <ServiceCard
+                                    key={service.id}
+                                    title={service.title}
+                                    image={service.image}
+                                    alt={service.alt}
+                                />
+                            </Link>
                         ))}
                     </div>
 
