@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/Button";
 import { PhoneCall } from "lucide-react";
+import Link from "next/link";
 
 const CallToAction = () => {
   return (
@@ -22,9 +23,11 @@ const CallToAction = () => {
                   <PhoneCall className="h-5 w-5" />
                   Call Now: +213 551.21.76.99
                 </Button>
-                <Button variant="outline" className="border-[#1a8b00] text-[#1a8b00] hover:bg-[#1a8b00]/10 text-lg py-6 px-8">
+                
+                <Button href="/BookAppointment" variant="outline" className="border-[#1a8b00] text-[#1a8b00] hover:bg-[#1a8b00]/10 text-lg py-6 px-8">
                   Book Online
                 </Button>
+              
               </div>
             </div>
             <div className="relative h-[300px] md:h-auto">

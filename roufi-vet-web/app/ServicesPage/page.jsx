@@ -139,14 +139,14 @@ const ServicesPage = () => {
               At Roufi Vet Clinic, we provide comprehensive care for animals of all types and ages.
               Explore our range of services designed to keep your furry family members healthy and happy.
             </p>
-            <div className="flex justify-center gap-8">
+            <div className="md:flex justify-center gap-8 ">
               <Link href="/SmallAnimal">
                 <Button className="bg-roufi-green hover:bg-roufi-green/90 py-6 px-10 text-lg text-white">
                   Small Animals
                 </Button>
               </Link>
               <Link href="/LargeAnimal">
-                <Button className="bg-roufi-green hover:bg-roufi-green/90 py-6 px-10 text-lg text-white">
+                <Button className="bg-roufi-green mt-4 md:mt-0 hover:bg-roufi-green/90 py-6 px-10 text-lg text-white">
                   Large Animals
                 </Button>
               </Link>
@@ -262,7 +262,7 @@ const ServicesPage = () => {
               Book an appointment today or contact us with any questions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/BookAappointment">
+              <Link href="/BookAppointment">
                 <Button className="bg-roufi-green hover:bg-roufi-green/90 text-white w-full sm:w-auto">
                   Book an Appointment
                 </Button>

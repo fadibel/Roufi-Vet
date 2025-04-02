@@ -38,22 +38,22 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4 text-[#1a8b00]">Services</h3>
             <ul className="space-y-2 text-gray-600">
-              <li><a href="#" className="hover:text-[#ff0302] transition-colors">Wellness Exams</a></li>
-              <li><a href="#" className="hover:text-[#ff0302] transition-colors">Vaccinations</a></li>
-              <li><a href="#" className="hover:text-[#ff0302] transition-colors">Dental Care</a></li>
-              <li><a href="#" className="hover:text-[#ff0302] transition-colors">Surgery</a></li>
-              <li><a href="#" className="hover:text-[#ff0302] transition-colors">Emergency Care</a></li>
+              <li><a href="/ServicesPage" className="hover:text-[#ff0302] transition-colors">Wellness Exams</a></li>
+              <li><a href="/ServicesPage" className="hover:text-[/ServicesPageff0302] transition-colors">Vaccinations</a></li>
+              <li><a href="/ServicesPage" className="hover:text-[#ff0302] transition-colors">Dental Care</a></li>
+              <li><a href="/ServicesPage" className="hover:text-[#ff0302] transition-colors">Surgery</a></li>
+              <li><a href="/ServicesPage" className="hover:text-[#ff0302] transition-colors">Emergency Care</a></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold text-lg mb-4 text-[#1a8b00]">Quick Links</h3>
             <ul className="space-y-2 text-gray-600">
-              <li><a href="#" className="hover:text-[#ff0302] transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-[#ff0302] transition-colors">Our Team</a></li>
-              <li><a href="#" className="hover:text-[#ff0302] transition-colors">Testimonials</a></li>
-              <li><a href="#" className="hover:text-[#ff0302] transition-colors">FAQs</a></li>
-              <li><a href="#" className="hover:text-[#ff0302] transition-colors">Blog</a></li>
+              <li><a href="/" className="hover:text-[#ff0302] transition-colors">Home</a></li>
+              <li><a href="/About" className="hover:text-[#ff0302] transition-colors">About Us</a></li>
+              <li><a href="/LargeAnimal" className="hover:text-[#ff0302] transition-colors">Large Animal</a></li>
+              <li><a href="/SmallAnimal" className="hover:text-[#ff0302] transition-colors">Small Animal</a></li>
+              <li><a href="/Contact" className="hover:text-[#ff0302] transition-colors">Contact</a></li>
             </ul>
           </div>
           
