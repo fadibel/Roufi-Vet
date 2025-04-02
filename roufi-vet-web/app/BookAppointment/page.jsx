@@ -22,7 +22,7 @@ import { useToast } from "@/hooks/use-toast";
 
 // import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/Button";
 import {
   Form,
   FormControl,
@@ -55,7 +55,7 @@ import {
   CardHeader,
   CardTitle,
   CardFooter,
-} from "@/components/ui/card";
+} from "../../components/ui/Card";
 import Header from "@/components/Header";
 
 const timeSlots = [
