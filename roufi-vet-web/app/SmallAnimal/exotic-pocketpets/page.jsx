@@ -8,7 +8,7 @@ import { Phone, Calendar, Cow } from "lucide-react";
 
 import Header from "@/components/Header";
 import ServiceCard from "@/components/ServiceCard";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 const exoticpocketpets = () => {
     const services = [
