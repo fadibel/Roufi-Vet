@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 import ServiceCard from '@/components/ServiceCard';
 import HeroBanner from '@/components/HeroBanner';
 import Header from '@/components/Header';
@@ -113,13 +113,7 @@ const SmallAnimal = () => {
                         ))}
                     </div>
 
-                    {/* <div className="mt-16 text-center">
-                        <Link href="/BookAppointment">
-                            <button className="px-6 py-3 border bg-[#1a8b00] rounded-full text-base font-medium text-white">
-                                Book Appointment
-                            </button>
-                        </Link>
-                    </div> */}
+                  
                 </div>
             </div>
             <Footer />

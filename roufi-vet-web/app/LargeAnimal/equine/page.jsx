@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/Button";
 import Link from "next/link";
 import { Calendar, PawPrint, Phone } from "lucide-react";
 import Header from "@/components/Header";

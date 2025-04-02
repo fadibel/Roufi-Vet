@@ -2,8 +2,8 @@
 import React from "react";
 // import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ServicesSection from "@/components/Services";
-import { Button } from "@/components/ui/button";
+// import ServicesSection from "@/components/Services";
+import { Button } from "../../components/ui/Button";
 import Link from "next/link";
 import { HeartPulse, Stethoscope, Scissors, PawPrint, Pill, ShieldCheck } from "lucide-react";
 import Header from "@/components/Header";
