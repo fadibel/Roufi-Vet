@@ -3,7 +3,7 @@ import React from "react";
 
 import Footer from "@/components/Footer";
 import { Award, HeartPulse, Users, MessageSquare } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 
 const About = () => {
