@@ -22,7 +22,7 @@ const services = [
         title: "FARMHOUSE CALLS",
         image: "/assets/Farmhosue-Calls.png",
         alt: "Dog getting dental treatment",
-        link: "/LargeAnimal/farmhouse-calls" // ✅ Added missing link
+        link: "/LargeAnimal/farmhouse-call" // ✅ Added missing link
     }
 ];
 
