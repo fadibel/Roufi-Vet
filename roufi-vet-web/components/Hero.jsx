@@ -9,13 +9,13 @@ const Hero = () => {
                     WHERE HOMETOWN VALUES MEET VETERINARY EXPERTISE
                 </h1>
             </div>
-            <div className="md:mt-[615px] mt-[710px] bottom-0 left-0 w-full">
+            {/* <div className="md:mt-[615px] mt-[710px] bottom-0 left-0 w-full">
                 <img
                     src="/assets/Mountain-Divider-Hero.svg"
                     alt="Mountain Divider"
                     className="w-full object-cover "
                 />
-            </div>
+            </div> */}
         </div>
 
     )
