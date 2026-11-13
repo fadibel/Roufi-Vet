@@ -2,24 +2,274 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------------------------
+   Tokens
+   Semantic colours (rgb channels) consumed by components/ui via Tailwind.
+--------------------------------------------------------------------------- */
+:root {
+  --background: 255 255 255;
+  --foreground: 28 25 23;
+  --primary: 26 139 0;
+  --primary-foreground: 255 255 255;
+  --secondary: 243 249 239;
+  --secondary-foreground: 16 86 0;
+  --muted: 245 245 244;
+  --muted-foreground: 120 113 108;
+  --accent: 243 249 239;
+  --accent-foreground: 21 112 0;
+  --destructive: 212 0 0;
+  --destructive-foreground: 255 255 255;
+  --border: 231 229 228;
+  --input: 214 211 209;
+  --ring: 26 139 0;
+  --popover: 255 255 255;
+  --popover-foreground: 28 25 23;
+  --card: 255 255 255;
+  --card-foreground: 28 25 23;
+
+  --header-h: 72px;
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 1024px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --header-h: 84px;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+@layer base {
+  html {
+    font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: calc(var(--header-h) + 1.5rem);
+    -webkit-tap-highlight-color: transparent;
+  }
 
-:root {
-  font-family: var(--font-poppins), sans-serif;
+  body {
+    @apply bg-white text-stone-900;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: rgb(26 139 0 / 0.18);
+    color: inherit;
+  }
+
+  :where(a, button, [role="radio"], summary):focus-visible {
+    outline: 2px solid #1a8b00;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Layout and typography primitives
+--------------------------------------------------------------------------- */
+@layer components {
+  /* Page container: 1280px content width with responsive gutters */
+  .shell {
+    @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12;
+  }
+
+  /* Outer frame used by full-bleed image sections (hero, banners, CTA) */
+  .frame {
+    @apply px-3 sm:px-4 lg:px-5;
+  }
+
+  .section-y {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  .pt-hero {
+    padding-top: calc(var(--header-h) + 3.5rem);
+  }
+
+  @media (min-width: 1024px) {
+    .pt-hero {
+      padding-top: calc(var(--header-h) + 5.5rem);
+    }
+  }
+
+  .type-display {
+    font-size: clamp(2.6rem, 1.55rem + 4.4vw, 5.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+  }
+
+  .type-h1 {
+    font-size: clamp(2.35rem, 1.6rem + 3.1vw, 4.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.032em;
+    font-weight: 600;
+  }
+
+  .type-h2 {
+    font-size: clamp(1.9rem, 1.4rem + 2.1vw, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.028em;
+    font-weight: 600;
+  }
+
+  .type-h3 {
+    font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+    line-height: 1.25;
+    letter-spacing: -0.018em;
+    font-weight: 600;
+  }
+
+  .type-lead {
+    font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+    line-height: 1.65;
+  }
+
+  /* Small uppercase label with the brand's red marker */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-roufi-green-700;
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply block h-px w-7 bg-roufi-red;
+  }
+
+  /* Use together with .eyebrow on dark backgrounds: class="eyebrow eyebrow-light" */
+  .eyebrow-light {
+    @apply text-white/85;
+  }
+
+  .eyebrow-light::before {
+    @apply bg-roufi-light-green;
+  }
+
+  /* Animated underline for text links */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.45s var(--ease-out-expo);
+  }
+
+  .link-underline:hover,
+  .group:hover .link-underline {
+    background-size: 100% 1px;
+  }
+
+  /* Brand topography motif: the clinic's contour artwork used as a mask,
+     so it can be tinted with any brand colour via background-color. */
+  .topo {
+    -webkit-mask: url("/assets/Meet-Our-Team-Topography.svg") center / contain no-repeat;
+    mask: url("/assets/Meet-Our-Team-Topography.svg") center / contain no-repeat;
+    pointer-events: none;
+  }
+
+  /* Long-form service copy */
+  .prose-roufi {
+    @apply text-[1.0625rem] leading-[1.8] text-stone-600;
+  }
+
+  .prose-roufi > * + * {
+    margin-top: 1.25em;
+  }
+
+  .prose-roufi strong {
+    @apply font-semibold text-stone-900;
+  }
+
+  .prose-roufi h2 {
+    @apply type-h3 text-stone-900;
+    margin-top: 2.25em;
+  }
+
+  .prose-roufi h3 {
+    @apply text-lg font-semibold tracking-tight text-stone-900;
+    margin-top: 2em;
+  }
+
+  .prose-roufi :where(p, li) a {
+    @apply font-medium text-roufi-green-700 underline decoration-roufi-green/30 underline-offset-4 transition-colors hover:decoration-roufi-green;
+  }
+
+  .prose-lead {
+    @apply type-lead text-stone-800;
+  }
+
+  /* Hero entrance (CSS, so it plays before hydration) */
+  .hero-rise {
+    animation: rise 0.9s var(--ease-out-expo) both;
+    animation-delay: var(--d, 0ms);
+  }
+
+  .hero-word {
+    @apply inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-bottom;
+  }
+
+  .hero-word > span {
+    @apply inline-block;
+    animation: word-rise 1s var(--ease-out-expo) both;
+    animation-delay: var(--d, 0ms);
+  }
+
+  /* Hide scrollbars on horizontal carousels while keeping them scrollable */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes word-rise {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Motion preferences
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,44 +1,90 @@
-
-import React from "react";
-import { Button } from "@/components/ui/Button";
-import { PhoneCall } from "lucide-react";
 import Link from "next/link";
+import { ArrowRight, Mail, PhoneCall } from "lucide-react";
 
-const CallToAction = () => {
+import { cn } from "@/lib/utils";
+import { PRIMARY_PHONE } from "@/lib/site";
+import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/motion/Reveal";
+
+/**
+ * Closing appointment band.
+ *
+ * variant="call": "Call Now" + "Book Online" (homepage copy).
+ * variant="contact": "Book an Appointment" + "Contact Us" (services copy).
+ */
+const CallToAction = ({
+  eyebrow = "Book a visit",
+  title = "Ready to give your pet the best care possible?",
+  description = "Schedule an appointment today and join our family of happy, healthy pets. Whether it's routine care or specialized treatment, we're here for you every step of the way.",
+  variant = "call",
+  background = "bg-white",
+}) => {
   return (
-    <section className="py-16 bg-[#eaf0de]">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="p-8 md:p-12 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                Ready to give your pet the 
-                <span className="from-[#1a8b00]/30 to-[#ff0302]/30"> best care possible?</span>
-              </h2>
-              <p className="text-gray-600 mb-8 text-lg">
-                Schedule an appointment today and join our family of happy, healthy pets. Whether it's routine care or specialized treatment, we're here for you every step of the way.
+    <section className={cn("frame pb-3 sm:pb-4 lg:pb-5", background)}>
+      <div className="relative isolate overflow-hidden rounded-[1.75rem] bg-roufi-green-950 text-white lg:rounded-[2.5rem]">
+        <span
+          aria-hidden="true"
+          className="topo absolute -right-24 top-1/2 -z-10 h-[46rem] w-[52rem] -translate-y-1/2 bg-roufi-light-green/[0.14]"
+        />
+        <span
+          aria-hidden="true"
+          className="topo absolute -bottom-56 -left-40 -z-10 h-[30rem] w-[34rem] rotate-180 bg-white/[0.05]"
+        />
+        <span
+          aria-hidden="true"
+          className="absolute -left-32 top-0 -z-10 size-[28rem] rounded-full bg-roufi-green/30 blur-[120px]"
+        />
+
+        <div className="shell grid gap-12 py-20 sm:py-24 lg:grid-cols-12 lg:items-end lg:py-32">
+          <Reveal className="lg:col-span-7">
+            <p className="eyebrow eyebrow-light">{eyebrow}</p>
+            <h2 className="type-h1 mt-6 max-w-3xl">{title}</h2>
+            <p className="mt-6 max-w-xl type-lead text-white/75">{description}</p>
+          </Reveal>
+
+          <Reveal delay={0.15} className="lg:col-span-5 lg:justify-self-end">
+            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+              {variant === "call" ? (
+                <>
+                  <Button asChild size="lg" variant="accent" className="sm:flex-1 lg:flex-none">
+                    <a href={PRIMARY_PHONE.href}>
+                      <PhoneCall />
+                      Call Now: {PRIMARY_PHONE.display}
+                    </a>
+                  </Button>
+                  <Button asChild size="lg" variant="light" className="sm:flex-1 lg:flex-none">
+                    <Link href="/BookAppointment">
+                      Book Online
+                      <ArrowRight className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+                    </Link>
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button asChild size="lg" variant="light" className="sm:flex-1 lg:flex-none">
+                    <Link href="/BookAppointment">
+                      Book an Appointment
+                      <ArrowRight className="transition-transform duration-300 group-hover/btn:translate-x-1" />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline-light" className="sm:flex-1 lg:flex-none">
+                    <Link href="/Contact">
+                      <Mail />
+                      Contact Us
+                    </Link>
+                  </Button>
+                </>
+              )}
+            </div>
+            {variant !== "call" && (
+              <p className="mt-5 text-sm text-white/60 lg:text-right">
+                Or call us directly at{" "}
+                <a href={PRIMARY_PHONE.href} className="font-medium text-white underline-offset-4 hover:underline">
+                  {PRIMARY_PHONE.display}
+                </a>
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button className="bg-[#ff0302] hover:bg-[#ff0000] text-white text-lg py-6 px-8 flex items-center gap-2">
-                  <PhoneCall className="h-5 w-5" />
-                  Call Now: +213 551.21.76.99
-                </Button>
-                
-                <Button href="/BookAppointment" variant="outline" className="border-[#1a8b00] text-[#1a8b00] hover:bg-[#1a8b00]/10 text-lg py-6 px-8">
-                  Book Online
-                </Button>
-              
-              </div>
-            </div>
-            <div className="relative h-[300px] md:h-auto">
-              <img 
-                src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
-                alt="Veterinarian with pets" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#1a8b00]/30 to-[#ff0302]/30 mix-blend-multiply"></div>
-            </div>
-          </div>
+            )}
+          </Reveal>
         </div>
       </div>
     </section>
@@ -46,4 +92,3 @@ const CallToAction = () => {
 };
 
 export default CallToAction;
-  

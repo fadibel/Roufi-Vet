@@ -1,76 +1,149 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, Facebook, Instagram, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { CLINIC } from "@/lib/site";
 
+const SOCIAL_ICONS = { Facebook, Instagram, Twitter };
+
+// Destinations are unchanged from the original footer.
+const serviceLinks = [
+  { label: "Wellness Exams", href: "/ServicesPage" },
+  { label: "Vaccinations", href: "/ServicesPage" },
+  { label: "Dental Care", href: "/ServicesPage" },
+  { label: "Surgery", href: "/ServicesPage" },
+  { label: "Emergency Care", href: "/ServicesPage" },
+];
+
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/About" },
+  { label: "Large Animal", href: "/LargeAnimal" },
+  { label: "Small Animal", href: "/SmallAnimal" },
+  { label: "Contact", href: "/Contact" },
+];
+
+function FooterHeading({ children }) {
+  return (
+    <h2 className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-roufi-green-700">
+      {children}
+    </h2>
+  );
+}
+
+function FooterLinks({ title, links }) {
+  return (
+    <div>
+      <FooterHeading>{title}</FooterHeading>
+      <ul className="mt-5 space-y-3">
+        {links.map((link) => (
+          <li key={link.label}>
+            <Link
+              href={link.href}
+              className="link-underline text-[0.9375rem] text-stone-600 transition-colors hover:text-stone-950"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 const Footer = () => {
   return (
-    <footer className="bg-[#fffcf7] from-white to-roufi-cream pt-10 pb-6 border-t">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
-            <Link href="/" to="/">
-              <img 
-                src="/assets/logo.png" 
-                alt="Roufi Vet Logo" 
-                className="h-16 mb-4"
+    <footer className="relative isolate overflow-hidden bg-roufi-cream">
+      <span
+        aria-hidden="true"
+        className="topo absolute -right-40 -top-24 -z-10 hidden h-[34rem] w-[38rem] bg-roufi-green/[0.07] md:block"
+      />
+
+      <div className="shell pb-10 pt-16 lg:pt-24">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-4">
+            <Link href="/" aria-label="Roufi Vet, home" className="inline-block rounded-lg">
+              <Image
+                src="/assets/logo.png"
+                alt="Roufi Vet Logo"
+                width={12332}
+                height={4266}
+                sizes="220px"
+                className="h-[4.5rem] w-auto"
               />
             </Link>
-            <p className="text-gray-600 mb-4">
-              Providing exceptional veterinary care with compassion and expertise.
-            </p>
-            <div className="flex gap-4">
-              <a href="#" className="p-2 bg-[#1a8b00] text-white rounded-full hover:bg-[#1a8b00]/90 transition-colors">
-                <Facebook className="h-5 w-5" />
-                
-              </a>
-              <a href="#" className="p-2 bg-[#ff0302] text-white rounded-full hover:bg-[#ff0302]/90 transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="p-2 bg-[#1a8b00] text-white rounded-full hover:bg-[#1a8b00]/90 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold text-lg mb-4 text-[#1a8b00]">Services</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li><a href="/ServicesPage" className="hover:text-[#ff0302] transition-colors">Wellness Exams</a></li>
-              <li><a href="/ServicesPage" className="hover:text-[/ServicesPageff0302] transition-colors">Vaccinations</a></li>
-              <li><a href="/ServicesPage" className="hover:text-[#ff0302] transition-colors">Dental Care</a></li>
-              <li><a href="/ServicesPage" className="hover:text-[#ff0302] transition-colors">Surgery</a></li>
-              <li><a href="/ServicesPage" className="hover:text-[#ff0302] transition-colors">Emergency Care</a></li>
+            <p className="mt-6 max-w-xs text-[0.9375rem] leading-relaxed text-stone-600">{CLINIC.tagline}</p>
+            <ul className="mt-7 flex gap-2.5" aria-label="Social media">
+              {CLINIC.social.map(({ label, href }) => {
+                const Icon = SOCIAL_ICONS[label];
+                return (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      aria-label={label}
+                      className="grid size-11 place-items-center rounded-full border border-stone-300/80 text-stone-700 transition-[background-color,border-color,color] duration-300 hover:border-roufi-green hover:bg-roufi-green hover:text-white"
+                    >
+                      <Icon className="size-[18px]" aria-hidden="true" />
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
-          
-          <div>
-            <h3 className="font-semibold text-lg mb-4 text-[#1a8b00]">Quick Links</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li><a href="/" className="hover:text-[#ff0302] transition-colors">Home</a></li>
-              <li><a href="/About" className="hover:text-[#ff0302] transition-colors">About Us</a></li>
-              <li><a href="/LargeAnimal" className="hover:text-[#ff0302] transition-colors">Large Animal</a></li>
-              <li><a href="/SmallAnimal" className="hover:text-[#ff0302] transition-colors">Small Animal</a></li>
-              <li><a href="/Contact" className="hover:text-[#ff0302] transition-colors">Contact</a></li>
-            </ul>
+
+          <div className="grid grid-cols-2 gap-8 lg:col-span-4">
+            <FooterLinks title="Services" links={serviceLinks} />
+            <FooterLinks title="Quick Links" links={quickLinks} />
           </div>
-          
-          <div>
-            <h3 className="font-semibold text-lg mb-4 text-[#1a8b00]">Contact</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li>CH3J+GJ9, Hamma Bouziane</li>
-              <li>Constantine</li>
-              <li className="font-medium text-[#ff0302]">+213 551.21.76.99</li>
-              <li className="font-medium text-[#ff0302]">+213 771.12.40.91</li>
-              <li>roufivet92@gmail.com</li>
-            </ul>
+
+          <div className="lg:col-span-4">
+            <FooterHeading>Contact</FooterHeading>
+            <address className="mt-5 space-y-5 not-italic">
+              <p className="flex gap-3 text-[0.9375rem] leading-relaxed text-stone-600">
+                <MapPin className="mt-1 size-4 shrink-0 text-roufi-red" aria-hidden="true" />
+                <span>
+                  {CLINIC.address.line1}
+                  <br />
+                  {CLINIC.address.line2}
+                </span>
+              </p>
+              <div className="flex gap-3">
+                <Phone className="mt-1.5 size-4 shrink-0 text-roufi-red" aria-hidden="true" />
+                <div className="space-y-1">
+                  {CLINIC.phones.map((phone) => (
+                    <a
+                      key={phone.href}
+                      href={phone.href}
+                      className="block text-lg font-semibold tracking-tight text-stone-900 transition-colors hover:text-roufi-red-700"
+                    >
+                      {phone.display}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <a
+                href={`mailto:${CLINIC.email}`}
+                className="group flex items-center gap-3 text-[0.9375rem] text-stone-600 transition-colors hover:text-stone-950"
+              >
+                <Mail className="size-4 shrink-0 text-roufi-red" aria-hidden="true" />
+                <span className="link-underline">{CLINIC.email}</span>
+              </a>
+            </address>
+            <Link
+              href="/BookAppointment"
+              className="group mt-8 inline-flex items-center gap-2 text-[0.9375rem] font-semibold text-roufi-green-700"
+            >
+              <span className="link-underline">Book Appointment</span>
+              <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </Link>
           </div>
         </div>
-        
-        <div className="mt-12 pt-6 border-t border-gray-200 text-center text-gray-500 text-sm">
+
+        <div className="mt-16 flex flex-col gap-3 border-t border-stone-300/60 pt-6 text-sm text-stone-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Roufi Vet Clinic. All rights reserved.</p>
+          <p>
+            {CLINIC.address.line1.split(", ")[1]}, {CLINIC.address.line2}
+          </p>
         </div>
       </div>
     </footer>
